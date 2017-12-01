@@ -40,6 +40,5 @@ for (let ele2 = 0; ele2 < colorPalette.length; ele2++) {
   document.querySelectorAll('.cell').forEach(function(ele4) {
     ele4.addEventListener('click', function() {
       ele4.style.background = document.querySelector('.box').style.background;
-      console.log(ele4.style.background);
     });
   });
