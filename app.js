@@ -1,14 +1,30 @@
-  let colorPalette = document.querySelectorAll("#color-palette [class^='col']");
-  let colorPicker = "";
-  colorPalette.forEach(function(color) {
-    color.addEventListener('click', function() {
-      colorPicker = color.id;
-    });
-  });
+let cellCount = document.querySelectorAll('.cell');
+let canvasSize = (80 * 44);
+let colorPalette = ['crimson', 'maroon', 'indigo', 'plum', 'lavender', 'magenta', 'thistle', 'fuchsia', 'hotpink', 'salmon', 'coral', 'goldenrod', 'bisque', 'lime', 'chartreuse', 'olive', 'forestgreen', 'teal', 'cyan', 'aquamarine', 'azure', 'mediumblue', 'royalblue', 'navy', 'black', 'gray', 'silver', 'khaki', 'tan', 'wheat', 'beige', 'ivory']
 
-  let square = document.querySelectorAll("#canvas [class^='col']");
-  square.forEach(function(ele) {
-    ele.addEventListener('click', function() {
-      ele.style.background = colorPicker;
-    });
-  });
+// while (colorPalette.length < 32) {
+//     do {
+//         let colorHex = [0 ,0, 0];
+//         let color = '';
+//         for (let i = 0; i < colorHex.length; i++) {
+//           if (colorHex[i] < 256) {
+//             colorHex[i] + 8;
+//           }
+//           color = colorHex.join('');
+//         }
+//     } while (colorPalette.indexOf(color) >= 0);
+//     colorPalette.push("#" + ("000000" + color.toString(16)).slice(-6));
+// }
+
+for (let ele1 = cellCount.length; ele1 < canvasSize; ele1++) {
+  let newCell = document.createElement('div');
+  newCell.classList.add('cell');
+  document.querySelector('.canvas').append(newCell);
+}
+
+for (let ele2 = 0; ele2 < colorPalette.length; ele2++) {
+  let color = document.createElement('div');
+  color.classList.add('color');
+  color.style.background = colorPalette[ele2];
+  document.querySelector('.color-palette').append(color);
+}
