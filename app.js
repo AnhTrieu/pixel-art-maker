@@ -28,3 +28,18 @@ for (let ele2 = 0; ele2 < colorPalette.length; ele2++) {
   color.style.background = colorPalette[ele2];
   document.querySelector('.color-palette').append(color);
 }
+
+  let picker = document.querySelectorAll('.color');
+  picker.forEach(function(ele3) {
+    ele3.addEventListener('click', function (){
+      document.querySelector('.box').style.background = ele3.style.background;
+      document.querySelector('.label').innerText = ele3.style.background;
+    });
+  });
+
+  document.querySelectorAll('.cell').forEach(function(ele4) {
+    ele4.addEventListener('click', function() {
+      ele4.style.background = document.querySelector('.box').style.background;
+      console.log(ele4.style.background);
+    });
+  });
